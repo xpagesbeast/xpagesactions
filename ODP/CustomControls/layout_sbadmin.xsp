@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding=	"UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<div id="wrapper">
+		<xc:nav></xc:nav>
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<xe:dynamicContent id="dynamicContent"  defaultFacet="events-basic">
+					<xp:this.facets>
+						<xc:cc_content_explore_events xp:key="events-basic"></xc:cc_content_explore_events>
+						<xc:cc_content_datatable xp:key="data-table"></xc:cc_content_datatable>
+					</xp:this.facets>
+				</xe:dynamicContent>
+			</div>
+		</div>
+		<xc:footer></xc:footer>
+	</div>
+</xp:view>

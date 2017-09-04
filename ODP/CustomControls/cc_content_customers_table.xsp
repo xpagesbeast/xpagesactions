@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="row">
+		<div class="col-lg-12">
+			<h2>Customers Table</h2>
+			<xp:link escape="true" text=""
+				styleClass="btn default btn-xs purple-stripe" id="link4" title="Edit">
+				<xp:eventHandler event="onclick" submit="true"
+					disableValidators="true" refreshId="dialogBoxes" refreshMode="partial">
+					<xp:this.parameters>
+
+						<xp:parameter name="opCode" value="new">
+						</xp:parameter>
+					</xp:this.parameters>
+					<xp:this.actionListeners>
+						<xp:actionListener type="com.xpagesbeast.listeners.CustomerListener">
+						</xp:actionListener>
+					</xp:this.actionListeners>
+					<xp:this.onComplete><![CDATA[
+										$('#editCustomer').modal('show');]]></xp:this.onComplete>
+				</xp:eventHandler>
+				<i class="fa fa-plus"></i>
+			</xp:link>
+
+			<xp:link escape="true" id="linkResetData">
+				<xp:eventHandler event="onclick" submit="true" immediate="true"
+					refreshMode="partial" action="#{pageBean.resetData}"
+					refreshId="responsiveTable">
+				</xp:eventHandler>
+				<i class="fa fa-database" />
+			</xp:link>
+
+			<xp:panel id="responsiveTable" styleClass="table-responsive">
+
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Total Orders</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<xp:repeat id="repeat1" rows="30" indexVar="rowIndex"
+							value="#{pageBean.customerItems}" var="rowData">
+							<tr>
+								<td>
+									<xp:text escape="true" id="computedField1" value="#{rowData.number}">
+									</xp:text>
+								</td>
+								<td>
+									<xp:text escape="true" id="computedField2" value="#{rowData.name}">
+									</xp:text>
+								</td>
+								<td>
+									<xp:text escape="true" id="computedField3"
+										value="#{rowData.numOrdersByCustomer}">
+									</xp:text>
+								</td>
+								<td>
+									<xp:link escape="true" text=""
+										styleClass="btn default btn-xs purple-stripe" id="linkEditRow"
+										title="Edit">
+										<xp:eventHandler event="onclick" submit="true"
+											disableValidators="true" refreshId="dialogBoxes" refreshMode="partial">
+											<xp:this.parameters>
+												<xp:parameter name="rowIndex" value="#{javascript:rowIndex}">
+												</xp:parameter>
+												<xp:parameter name="opCode" value="edit">
+												</xp:parameter>
+											</xp:this.parameters>
+											<xp:this.actionListeners>
+												<xp:actionListener
+													type="com.xpagesbeast.listeners.CustomerListener">
+												</xp:actionListener>
+											</xp:this.actionListeners>
+											<xp:this.onComplete><![CDATA[
+										$('#editCustomer').modal('show');]]></xp:this.onComplete>
+										</xp:eventHandler>
+										<i class="fa fa-edit"></i>
+									</xp:link>
+
+									<xp:link styleClass="" id="linkDeleteDirect"
+										 title="Delete no confirm">
+										<xp:eventHandler event="onclick"
+											refreshId="dynamicContent" submit="true" immediate="true"
+											refreshMode="partial" actionListener="#{pageBean.deleteCustomerItem}">
+											<xp:this.parameters>
+												<xp:parameter
+													name="rowIndex" value="#{javascript:rowIndex}">
+												</xp:parameter>
+											</xp:this.parameters>
+										</xp:eventHandler>
+										<i class="fa fa-trash"></i>
+									</xp:link>
+									
+									<xp:link styleClass="" id="linkDeleteModalLaunch"
+										title="Delete with modal">
+										<xp:eventHandler event="onclick" refreshId="dynamicContent"
+											submit="true" refreshMode="partial" immediate="true">
+											<xp:this.actionListeners>
+												<xp:actionListener type="com.xpagesbeast.listeners.DeleteRowListener">
+												</xp:actionListener>
+											</xp:this.actionListeners>
+											<xp:this.parameters>
+												<xp:parameter name="rowIndex" value="#{javascript:rowIndex}">
+												</xp:parameter>
+												<xp:parameter name="opCode"
+													value="Customer">
+												</xp:parameter>
+											</xp:this.parameters>
+											<xp:this.onComplete><![CDATA[
+										$('#deleteRow').modal('show');]]></xp:this.onComplete>
+										</xp:eventHandler>
+										<i class="fa fa-trash"></i>
+									</xp:link>
+								</td>
+							</tr>
+						</xp:repeat>
+
+
+					</tbody>
+				</table>
+			</xp:panel>
+		</div>
+	</div>
+</xp:view>

@@ -1,0 +1,74 @@
+<!--
+	The default theme contents use theme inheritance.
+
+	Application themes can extend an existing global theme using the
+	extends attribute.  Existing themes include the following options:
+
+	1. webstandard 2. oneui 3. notes
+-->
+<theme extends="Bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	<!-- 
+		Use this pattern to include resources (such as style sheets
+		and JavaScript files that are used by this theme.
+	-->
+	<!--
+	<resource>
+		<content-type>text/css</content-type>
+		<href>mystylesheet.css</href>
+	</resource>
+	-->
+
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<!--
+	<control>
+		<name>[Control Name]</name>
+		<property>
+			<name>[property Name]</name>
+			<value>[property Value]</value>
+		</property>
+	</control>
+	-->
+	
+	<resources>
+		<metaData>
+			<http-equiv>X-UA-Compatible</http-equiv>
+			<content>"IE=edge"</content>
+		</metaData>
+		<metaData>
+			 <name>name</name>
+			 <content>Slobodan Steve Lohja | slohja@xpagesbeast.com</content>
+		</metaData>
+		<metaData>
+			 <name>name</name>
+			 <content>Slobodan Steve Lohja | slohja@xpagesbeast.com</content>
+		</metaData>
+		<metaData>
+			 <name>description</name>
+			 <content>Sample application by slohja@xpagesbeast.com for MWLUG 2017</content>
+		</metaData>
+	</resources>
+	
+	<!-- Custom CSS -->
+	<resource>
+		<content-type>text/css</content-type>
+    	<href>css/sb-admin.css</href>
+		<rel>stylesheet</rel>
+	</resource>
+    
+    <!-- Morris Charts CSS -->
+    <resource>
+		<content-type>text/css</content-type>
+		<href>css/plugins/morris.css</href>
+		<rel>stylesheet</rel>
+	</resource>
+
+    <!-- Custom Fonts -->
+    <resource>
+		<content-type>text/css</content-type>
+		<href>font-awesome/css/font-awesome.min.css</href>
+		<rel>stylesheet</rel>
+	</resource>
+	
+</theme>

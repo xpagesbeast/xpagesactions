@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:heading headingTitle="XPages/JSF Events with ActionListners"
+		headingDescription="Exploring XPages EventHandler and JSF ActionListeners with collections"
+		pageName="Tables">
+	</xc:heading>
+
+	<div class="row">
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-comments fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">0</div>
+							<div>New Activities!</div>
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="panel-footer">
+						<span class="pull-left">View Details</span>
+						<span class="pull-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-green">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-tasks fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">
+								<xp:text escape="true" value="#{pageBean.customerCount}"
+									id="computedField1">
+								</xp:text>
+							</div>
+							<div>New Customers</div>
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="panel-footer">
+						<span class="pull-left">View Details</span>
+						<span class="pull-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-yellow">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-shopping-cart fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">
+								<xp:text escape="true" value="#{pageBean.orderCount}"
+									id="computedField2">
+								</xp:text>
+							</div>
+							<div>New Orders!</div>
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="panel-footer">
+						<span class="pull-left">View Details</span>
+						<span class="pull-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-red">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-support fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">13</div>
+							<div>Support Tickets!</div>
+						</div>
+					</div>
+				</div>
+				<a href="#">
+					<div class="panel-footer">
+						<span class="pull-left">View Details</span>
+						<span class="pull-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!--  End Dashboard -->
+
+	<xp:panel id="dialogBoxes" styleClass="row">
+		<div class="col-lg-6">
+			<xc:cc_content_customers_table></xc:cc_content_customers_table>
+			<xc:cc_dialog_customer></xc:cc_dialog_customer>
+			<xc:cc_dialog_delete></xc:cc_dialog_delete>
+		</div>
+	</xp:panel>
+
+</xp:view>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$TITLE">
+    <text>sbadmin.theme</text>
+  </item>
+  <item name="$Flags">
+    <text>34567Cg~`</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>sbadmin.theme</text>
+  </item>
+  <item name="$CSSFiles" sign="true">
+    <textlist>
+      <text>css/sb-admin.css</text>
+      <text>css/plugins/morris.css</text>
+      <text>font-awesome/css/font-awesome.min.css</text>
+    </textlist>
+  </item>
+</note>

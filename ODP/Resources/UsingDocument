@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpusingdocument xmlns="http://www.lotus.com/dxl" publicaccess="false" default="true" renderpassthrough="true">
+  <body>
+    <richtext>
+      <pardef id="1"/>
+      <par def="1">Application Notes</par>
+      <par def="1"/>
+      <par def="1">UI was inspired by https://startbootstrap.com/template-overviews/sb-admin/</par>
+      <par def="1"/>
+      <par def="1">
+        <run>
+          <font style="bold"/>Java</run>
+      </par>
+      <par def="1">
+        <run>
+          <font style="bold"/>
+        </run>
+      </par>
+      <par def="1">
+        <run>
+          <font style="bold"/>ManagedBeans</run>
+      </par>
+      <pardef id="2" leftmargin="1.2500in"/>
+      <par def="2">PhaseListeners</par>
+      <par def="2">UserBean (not the extension library version).  Disable this one if you are going to use the Extension Library Version.</par>
+      <par def="1"/>
+      <par def="1">
+        <run>
+          <font style="bold"/>Themes</run>
+      </par>
+      <par def="1">CSS and meta data resources loaded by Theme</par>
+      <par def="1">XPages Themes used</par>
+      <par def="1"/>
+      <par def="1">
+        <run>
+          <font style="bold"/>Font-Awesome</run>
+      </par>
+      <par def="1">To make it work, the min version removed <run>
+          <font style="italic" name="Courier New" pitch="fixed" truetype="true" familyid="30" color="#4100c2"/>?v=4.2.0</run>from URL.</par>
+      <par def="1"/>
+      <par def="1">
+        <run>
+          <font style="bold"/>WebContent</run>
+      </par>
+      <par def="1">Additional Resources can be found in WebContent.  Go to Window &gt; Show Eclipse Views &gt; Navigator</par>
+      <par def="1">WebContent \css</par>
+      <par def="1">WebContent\font-awesome</par>
+      <par def="1">WebContent\fonts</par>
+      <par def="1">WebContent\js</par>
+      <par def="1"/>
+      <par def="1">
+        <run>
+          <font style="bold"/>Extension Library</run>
+      </par>
+      <par def="1">Used for Dynamic Content.</par>
+    </richtext>
+  </body>
+</helpusingdocument>

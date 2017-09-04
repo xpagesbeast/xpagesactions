@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	styleClass="page-header">
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-lg-12">
+			<xp:text escape="false" id="headingText" tagName="h1">
+				<xp:this.value><![CDATA[${compositeData.headingTitle} <small> #{compositeData.headingDescription} </small>]]></xp:this.value>
+			</xp:text>
+
+			<ol class="breadcrumb">
+				<li class="active">
+					<i class="fa fa-dashboard"></i>
+					<xp:text escape="true" value="${compositeData.pageName}" />
+				</li>
+			</ol>
+		</div>
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="alert alert-info alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">x
+				</button>
+				<i class="fa fa-info-circle"></i>
+				<strong style="margin-left:3px;">Timestamp in header cc</strong>
+				<xp:text style="font-size:1.5em;margin-left:5px;margin-right:5px;"
+					value="#{pageBean.time}">
+				</xp:text>
+				<span style="margin-left:3px;">Use the buttons below to try out the events.</span>
+				
+			</div>
+		</div>
+		<xp:panel id="user-alert" styleClass="col-lg-12 hidden">
+			<div class="alert alert-danger alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">
+					x
+				</button>
+				<i class="fa fa-info-circle"></i>
+				<xp:messages id="messages1" disableTheme="true"></xp:messages>
+			</div>
+		</xp:panel>
+	</div>
+	<!-- /.row -->
+	
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[console.log("start.");
+var messages = document.querySelectorAll("span[role='alert']");
+if(messages.length > 0){
+  if(messages[0].innerText != ''){
+	var element = document.getElementById("#{id:user-alert}");
+  if(element){
+    console.log("element found");
+    element.classList.remove("hidden");// = "col-lg-12";
+  }else{
+    console.log("element not found.");
+    
+  }
+  }
+}
+console.log("end.");]]></xp:this.value>
+	</xp:scriptBlock>
+</xp:view>

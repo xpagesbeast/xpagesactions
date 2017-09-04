@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+
+<div id="editCustomer" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+			<label>Customer Name</label>
+			<xp:inputText id="inputTextCustomerName"
+				value="#{pageBean.currentCustomerItem.name}" required="true">
+			</xp:inputText>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <xp:link type="button" styleClass="btn btn-link"
+        	id="btnClose" text="Cancel">
+        	<xp:this.attrs>
+        		<xp:attr name="data-dismiss" value="modal"></xp:attr>
+        	</xp:this.attrs>
+        	<xp:eventHandler event="onclick" submit="true"
+        		immediate="true" refreshMode="partial"
+        		refreshId="responsiveTable"
+        		action="#{pageBean.resetCurrentCustomer}">
+        	</xp:eventHandler>
+        </xp:link>
+        <xp:button type="button" styleClass="btn btn-primary"
+        	value="Save changes" id="button1">
+        	<xp:this.attrs>
+        		<xp:attr name="data-dismiss" value="modal"></xp:attr>
+        	</xp:this.attrs>
+        	<xp:eventHandler event="onclick" submit="true"
+        		refreshMode="partial" refreshId="dynamicContent" action="#{pageBean.saveCurrentCustomer}">
+        	</xp:eventHandler>
+        </xp:button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+	
+
+</xp:view>
